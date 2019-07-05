@@ -1,4 +1,3 @@
-
 export default {
   mode: 'universal',
   /*
@@ -23,26 +22,43 @@ export default {
   ** Global CSS
   */
   css: [
+    '~/assets/styles/index.sass'
   ],
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
-  ],
+  plugins: [],
   /*
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/apollo'
   ],
+
+  /**
+   * Modern and legacy bundles
+   */
+  modern: true,
+
   /*
   ** Build configuration
   */
   build: {
+    extractCSS: true,
     /*
     ** You can extend webpack config here
     */
     extend(config, ctx) {
     }
+  },
+
+  apollo: {
+    errorHandler: '~/apollo/apollo-error-handler.js',
+    authenticationType: 'Bearer', // optional, default: 'Bearer'
+    clientConfigs: {
+      default: '~/apollo/config.js',
+    }
   }
+
 }
