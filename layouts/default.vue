@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nuxt />
+    <nuxt/>
   </div>
 </template>
 
@@ -9,30 +9,40 @@ import gql from 'graphql-tag';
 
 export default {
   head: {
+    // titleTemplate: `%s - ${this.layout._site.globalSeo.siteName}`,
+    // title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
+      // ...this.getfaviconMetaTags()
+      // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' }
     ]
   },
 
-
   apollo: {
-    allPosts: gql`query LayoutQuery
+    layout: gql`query LayoutQuery
 {
   _site {
     globalSeo {
       siteName
+      facebookPageUrl
+      # fallbackSeo
+      titleSuffix
+      twitterAccount
     }
     faviconMetaTags {
-      ...GatsbyDatoCmsFaviconMetaTags
+      attributes
+      content
+      tag
     }
   }
   home {
     _seoMetaTags {
-      ...GatsbyDatoCmsSeoMetaTags
+      attributes
+      content
+      tag
     }
     introText(markdown: true)
     copyright
@@ -43,6 +53,18 @@ export default {
   }
 }
 `
+  },
+
+  methods: {
+    getfaviconMetaTags: function () {
+      if (!this.layout) {
+        return [];
+      }
+
+      return this.layout._site.faviconMetaTags.filter((meta) => {
+        return { rel: meta.rel, type: meta.type, sizes: meta.sizes };
+      });
+    }
   }
 
 };

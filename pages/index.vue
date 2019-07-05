@@ -29,23 +29,23 @@
 </template>
 
 <script>
-import gql from 'graphql-tag';
+// import gql from 'graphql-tag';
 import Logo from '~/components/Logo.vue';
 
 export default {
   components: {
     Logo
-  },
-
-  apollo: {
-    allPosts: gql`{
-    allPosts{
-    title
-    text
-    slug
-    }
-    }`
   }
+
+  // apollo: {
+  //   allPosts: gql`{
+  //   allPosts{
+  //   title
+  //   text
+  //   slug
+  //   }
+  //   }`
+  // }
 
 };
 </script>
