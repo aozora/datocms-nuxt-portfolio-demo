@@ -29,13 +29,25 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import gql from 'graphql-tag';
+import Logo from '~/components/Logo.vue';
 
 export default {
   components: {
     Logo
+  },
+
+  apollo: {
+    allPosts: gql`{
+    allPosts{
+    title
+    text
+    slug
+    }
+    }`
   }
-}
+
+};
 </script>
 
 <style>
