@@ -17,7 +17,8 @@
     "apollo": "^2.15.0",
     "graphql-tag": "^2.10.1",
     "nuxt": "^2.0.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "vue-masonry-css": "^1.0.3"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",
