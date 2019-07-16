@@ -1,50 +1,48 @@
 <template>
   <div class="container">
-<!--    <div v-if="query" class="container__sidebar">-->
-<!--      <div class="sidebar">-->
-<!--        <h6 class="sidebar__title">-->
-<!--          <nuxt-link to="/">{query.site.globalSeo.siteName}</nuxt-link>-->
-<!--        </h6>-->
-<!--        <div class="sidebar__intro" v-html="query.home.introText.childMarkdownRemark.html"></div>-->
+    <div v-if="query" class="container__sidebar">
+      <div class="sidebar">
+        <h6 class="sidebar__title">
+          <nuxt-link to="/">{{ query.site.globalSeo.siteName }}</nuxt-link>
+        </h6>
+        <div class="sidebar__intro" v-html="query.home.introText"></div>
 
-<!--        <ul class="sidebar__menu">-->
-<!--          <li>-->
-<!--            <nuxt-link to="/">Home</nuxt-link>-->
-<!--          </li>-->
-<!--          <li>-->
-<!--            <nuxt-link to="/about">About</nuxt-link>-->
-<!--          </li>-->
-<!--        </ul>-->
+        <ul class="sidebar__menu">
+          <li>
+            <nuxt-link to="/">Home</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/about">About</nuxt-link>
+          </li>
+        </ul>
 
-<!--        <p class="sidebar__social">-->
-<!--          {query.allSocialProfiles.map((profile) => (-->
-<!--          <a-->
-<!--            :key="profile.profileType"-->
-<!--            :href="profile.url"-->
-<!--            target="blank"-->
-<!--            :class="`social social&#45;&#45;${profile.profileType.toLowerCase()}`"-->
-<!--          >-->
-<!--          </a>-->
-<!--          ))}-->
-<!--        </p>-->
+        <p class="sidebar__social">
+          <a v-for="profile in query.allSocialProfiles"
+            :key="profile.profileType"
+            :href="profile.url"
+            target="blank"
+            :class="`social social--${profile.profileType.toLowerCase()}`"
+          >
+          </a>
+        </p>
 
-<!--        <div class="sidebar__copyright" v-text="query.home.copyright"></div>-->
-<!--      </div>-->
-<!--    </div>-->
+        <div class="sidebar__copyright" v-text="query.home.copyright"></div>
+      </div>
+    </div>
 
-<!--    <div class="container__body">-->
-<!--      <div class="container__mobile-header">-->
-<!--        <div class="mobile-header">-->
-<!--          <div class="mobile-header__menu">-->
-<!--            <nuxt-link to="#" data-js="toggleSidebar"/>-->
-<!--          </div>-->
-<!--          <div class="mobile-header__logo">-->
-<!--            <nuxt-link to="/">{{ query.site.globalSeo.siteName }}</nuxt-link>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <nuxt/>-->
-<!--    </div>-->
+    <div class="container__body">
+      <div class="container__mobile-header">
+        <div class="mobile-header">
+          <div class="mobile-header__menu">
+            <nuxt-link to="#" data-js="toggleSidebar"/>
+          </div>
+          <div class="mobile-header__logo">
+            <nuxt-link to="/">Home</nuxt-link>
+          </div>
+        </div>
+      </div>
+      <nuxt/>
+    </div>
   </div>
 </template>
 
