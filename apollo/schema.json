@@ -1,0 +1,243 @@
+{
+  "data": {
+    "__schema": {
+      "types": [
+        {
+          "name": "Boolean",
+          "kind": "SCALAR",
+          "possibleTypes": null
+        },
+        {
+          "name": "String",
+          "kind": "SCALAR",
+          "possibleTypes": null
+        },
+        {
+          "name": "Query",
+          "kind": "OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "AboutPageRecord",
+          "kind": "OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "DateTime",
+          "kind": "SCALAR",
+          "possibleTypes": null
+        },
+        {
+          "name": "ItemId",
+          "kind": "SCALAR",
+          "possibleTypes": null
+        },
+        {
+          "name": "Tag",
+          "kind": "OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "MetaTagAttributes",
+          "kind": "SCALAR",
+          "possibleTypes": null
+        },
+        {
+          "name": "SiteLocale",
+          "kind": "ENUM",
+          "possibleTypes": null
+        },
+        {
+          "name": "ItemStatus",
+          "kind": "ENUM",
+          "possibleTypes": null
+        },
+        {
+          "name": "BooleanType",
+          "kind": "SCALAR",
+          "possibleTypes": null
+        },
+        {
+          "name": "FileField",
+          "kind": "OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "UploadId",
+          "kind": "SCALAR",
+          "possibleTypes": null
+        },
+        {
+          "name": "IntType",
+          "kind": "SCALAR",
+          "possibleTypes": null
+        },
+        {
+          "name": "SeoField",
+          "kind": "OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "HomeRecord",
+          "kind": "OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "WorkRecord",
+          "kind": "OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "WorkModelFilter",
+          "kind": "INPUT_OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "DateTimeFilter",
+          "kind": "INPUT_OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "IdFilter",
+          "kind": "INPUT_OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "PositionFilter",
+          "kind": "INPUT_OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "StatusFilter",
+          "kind": "INPUT_OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "BooleanFilter",
+          "kind": "INPUT_OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "SlugFilter",
+          "kind": "INPUT_OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "SeoFilter",
+          "kind": "INPUT_OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "TextFilter",
+          "kind": "INPUT_OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "TextMatchesFilter",
+          "kind": "INPUT_OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "GalleryFilter",
+          "kind": "INPUT_OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "FileFilter",
+          "kind": "INPUT_OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "StringFilter",
+          "kind": "INPUT_OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "StringMatchesFilter",
+          "kind": "INPUT_OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "WorkModelOrderBy",
+          "kind": "ENUM",
+          "possibleTypes": null
+        },
+        {
+          "name": "CollectionMetadata",
+          "kind": "OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "SocialProfileRecord",
+          "kind": "OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "SocialProfileModelFilter",
+          "kind": "INPUT_OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "SocialProfileModelOrderBy",
+          "kind": "ENUM",
+          "possibleTypes": null
+        },
+        {
+          "name": "Site",
+          "kind": "OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "FaviconType",
+          "kind": "ENUM",
+          "possibleTypes": null
+        },
+        {
+          "name": "GlobalSeoField",
+          "kind": "OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "__Schema",
+          "kind": "OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "__Type",
+          "kind": "OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "__Field",
+          "kind": "OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "__Directive",
+          "kind": "OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "__EnumValue",
+          "kind": "OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "__InputValue",
+          "kind": "OBJECT",
+          "possibleTypes": null
+        },
+        {
+          "name": "__TypeKind",
+          "kind": "ENUM",
+          "possibleTypes": null
+        },
+        {
+          "name": "__DirectiveLocation",
+          "kind": "ENUM",
+          "possibleTypes": null
+        }
+      ]
+    }
+  }
+}
