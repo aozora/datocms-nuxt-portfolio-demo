@@ -21,6 +21,10 @@
           </figure>
         </div>
       </masonry>
+
+      <div class="actions">
+        <button v-if="showMoreEnabled" @click="showMore">Show more</button>
+      </div>
     </no-ssr>
   </div>
 </template>
@@ -28,12 +32,20 @@
 <script>
 import gql from 'graphql-tag';
 
+const pageSize = 20;
+
 export default {
-  components: {},
+  name: 'Home',
+
+  data: () => ({
+    page: 0,
+    showMoreEnabled: true
+  }),
 
   apollo: {
-    allWorks: gql`query WorkQuery {
-    allWorks {
+    allWorks: {
+      query: gql`query WorkQuery {
+    allWorks (skip: $page, first: $pageSize){
         id
         title
         slug
@@ -44,7 +56,47 @@ export default {
         excerpt(markdown: true)
       }
     }
-   `
+   `,
+      // Initial variables
+      variables: {
+        page: 0,
+        pageSize
+      }
+    }
+  },
+
+  methods: {
+    showMore () {
+      this.page++;
+      // Fetch more data and transform the original result
+      this.$apollo.queries.allWorks.fetchMore({
+        // New variables
+        variables: {
+          page: this.page,
+          pageSize
+        },
+        // Transform the previous result with new data
+        updateQuery: (previousResult, { fetchMoreResult }) => {
+          if (!fetchMoreResult) {
+            this.showMoreEnabled = false;
+            return previousResult;
+          }
+
+          const newWorks = fetchMoreResult.allWorks;
+          // const hasMore = fetchMoreResult.allWorks.hasMore;
+          this.showMoreEnabled = true;
+
+          return {
+            allWorks: [
+              // __typename: previousResult.allWorks.__typename,
+              // Merging the tag list
+              ...previousResult.allWorks,
+              ...newWorks
+            ]
+          };
+        }
+      });
+    }
   }
 
 };
