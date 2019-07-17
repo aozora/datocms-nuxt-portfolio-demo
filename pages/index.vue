@@ -44,7 +44,7 @@ export default {
 
   apollo: {
     allWorks: {
-      query: gql`query WorkQuery ($page: Int, $pageSize: Int){
+      query: gql`query WorkQuery ($page: IntType!, $pageSize: IntType!){
     allWorks (skip: $page, first: $pageSize){
         id
         title
@@ -93,6 +93,9 @@ export default {
               ...newWorks
             ]
           };
+          // return Object.assign({}, prev, {
+          //   feed: [...prev.feed, ...fetchMoreResult.feed]
+          // });
         }
       });
     }
