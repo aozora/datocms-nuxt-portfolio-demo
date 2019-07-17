@@ -13,8 +13,8 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/apollo": "^4.0.0-rc8.1",
-    "apollo": "^2.15.0",
+    "@nuxtjs/apollo": "^4.0.0-rc8.2",
+    "apollo": "^2.16.0",
     "graphql-tag": "^2.10.1",
     "nuxt": "^2.0.0",
     "slick-carousel": "^1.8.1",
@@ -27,7 +27,7 @@
     "eslint": "^6.0.1",
     "eslint-config-standard": ">=13.0.1",
     "eslint-plugin-import": ">=2.16.0",
-    "eslint-plugin-jest": ">=22.3.0",
+    "eslint-plugin-jest": ">=22.9.0",
     "eslint-plugin-node": ">=8.0.1",
     "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-promise": ">=4.0.1",

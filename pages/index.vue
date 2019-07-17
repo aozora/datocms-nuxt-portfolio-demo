@@ -44,7 +44,7 @@ export default {
 
   apollo: {
     allWorks: {
-      query: gql`query WorkQuery {
+      query: gql`query WorkQuery ($page: Int, $pageSize: Int){
     allWorks (skip: $page, first: $pageSize){
         id
         title
@@ -55,8 +55,7 @@ export default {
         }
         excerpt(markdown: true)
       }
-    }
-   `,
+    }`,
       // Initial variables
       variables: {
         page: 0,
