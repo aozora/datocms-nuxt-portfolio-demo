@@ -56,10 +56,12 @@ export default {
         excerpt(markdown: true)
       }
     }`,
-      // Initial variables
-      variables: {
-        page: 0,
-        pageSize
+      // Initial variables - use a function for reactive data
+      variables () {
+        return {
+          page: 0,
+          pageSize
+        };
       }
     }
   },
@@ -67,6 +69,7 @@ export default {
   methods: {
     showMore () {
       this.page++;
+
       // Fetch more data and transform the original result
       this.$apollo.queries.allWorks.fetchMore({
         // New variables
@@ -74,28 +77,23 @@ export default {
           page: this.page,
           pageSize
         },
+
         // Transform the previous result with new data
         updateQuery: (previousResult, { fetchMoreResult }) => {
+          debugger;
           if (!fetchMoreResult) {
             this.showMoreEnabled = false;
             return previousResult;
           }
 
           const newWorks = fetchMoreResult.allWorks;
-          // const hasMore = fetchMoreResult.allWorks.hasMore;
           this.showMoreEnabled = true;
 
-          return {
+          return Object.assign({}, previousResult, {
             allWorks: [
-              // __typename: previousResult.allWorks.__typename,
-              // Merging the tag list
               ...previousResult.allWorks,
-              ...newWorks
-            ]
-          };
-          // return Object.assign({}, prev, {
-          //   feed: [...prev.feed, ...fetchMoreResult.feed]
-          // });
+              ...newWorks]
+          });
         }
       });
     }
