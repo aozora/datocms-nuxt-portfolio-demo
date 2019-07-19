@@ -1,6 +1,6 @@
 # datocms-nuxt-portfolio-demo
 
-> My premium Nuxt.js project
+> Porting to Nuxt of DatoCMS-Gatsby Portfolio starter project
 
 ## Build Setup
 
