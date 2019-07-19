@@ -51,7 +51,6 @@
 <script>
 import gql from 'graphql-tag';
 import { DatoCmsSeoMetaTags } from '../apollo/fragments/seo';
-import { query } from '../apollo/queries/defaultQuery';
 
 export default {
   head () {
@@ -114,13 +113,13 @@ ${DatoCmsSeoMetaTags}
   }
 }`
   },
-
-  async mounted () {
-    this.loading = true;
-    const data = await this.$apollo.query({ query });
-    this.query = data.data;
-    this.loading = false;
-  },
+  //
+  // async mounted () {
+  //   this.loading = true;
+  //   const data = await this.$apollo.query({ query });
+  //   this.query = data.data;
+  //   this.loading = false;
+  // },
 
   methods: {
     // eslint-disable-next-line object-shorthand
