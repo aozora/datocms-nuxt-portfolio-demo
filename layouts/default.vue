@@ -49,8 +49,8 @@
 </template>
 
 <script>
-// import gql from 'graphql-tag';
-// import { DatoCmsSeoMetaTags } from '../apollo/fragments/seo';
+import gql from 'graphql-tag';
+import { DatoCmsSeoMetaTags } from '../apollo/fragments/seo';
 import { query } from '../apollo/queries/defaultQuery';
 
 export default {
@@ -74,6 +74,45 @@ export default {
       loading: false,
       query: undefined
     };
+  },
+
+  apollo: {
+    site: gql`query DefaultResults
+{
+  site: _site {
+    globalSeo {
+      siteName
+      facebookPageUrl
+      # fallbackSeo
+      titleSuffix
+      twitterAccount
+    }
+    faviconMetaTags {
+      ...DatoCmsSeoMetaTags
+    }
+  }
+}
+${DatoCmsSeoMetaTags}
+`,
+    home: gql`
+ {
+   home {
+    seoMetaTags: _seoMetaTags {
+      ...DatoCmsSeoMetaTags
+    }
+    introText(markdown: true)
+    copyright
+  }
+ }
+${DatoCmsSeoMetaTags}
+`,
+    allSocialProfiles: gql`
+{
+  allSocialProfiles(locale: en, orderBy: position_ASC) {
+    profileType
+    url
+  }
+}`
   },
 
   async mounted () {
